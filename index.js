@@ -13,6 +13,10 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, "public")));
 
+app.get("/", (req, res) => {
+  res.sendFile("./public/index.html");
+});
+
 const expressServer = app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
 });
